@@ -34,17 +34,17 @@
         <div class="container-faktura">
           <span class="block title">FAKTURA</span>
           <span class="block"
-            >Förfallodatum <input class="var" id="dueDate" value="X"
+            >Förfallodatum <input class="var" id="dueDate" value="–"
           /></span>
           <span class="block"
-            >Summa att betala <input class="var" id="sumToPay" value="X"
+            >Summa att betala <input class="var" id="sumToPay" value="–"
           /></span>
           <span class="block"
-            >Ange referens <input class="var" id="contactReference" value="X"
+            >Ange referens <input class="var" id="contactReference" value="–"
           /></span>
 
           <span class="block"
-            >Bankkonto<input class="var" id="uBankAccount" value="X"
+            >Bankkonto<input class="var" id="uBankAccount" value="–"
           /></span>
         </div>
       </div>
@@ -56,15 +56,15 @@
       <div class="header">
         <div class="container-azmi">
           <span class="block"
-            >Fakturanummer <input class="var" id="invoiceNum" value="X"
+            >Fakturanummer <input class="var" id="invoiceNum" value="–"
           /></span>
 
           <span class="block"
-            >Kundnummer <input class="var" id="customerNum" value="X"
+            >Kundnummer <input class="var" id="customerNum" value="–"
           /></span>
 
           <span class="block"
-            >Kundreferens <input class="var" id="customerReference" value="X"
+            >Kundreferens <input class="var" id="customerReference" value="–"
           /></span>
         </div>
         <div class="container-faktura">
@@ -112,7 +112,7 @@
 
         var cells = newRow.getElementsByTagName('td');
         for (var i = 0; i < cells.length; i++) {
-            cells[i].innerHTML = 'aasgg';
+            cells[i].innerHTML = `<td><input class='var' value='–' /></td>`;
         }
 
         table.appendChild(newRow);
@@ -133,26 +133,26 @@
             <tr>
               <td>
                 <span class="block"
-                  >Summa ex moms <span class="var">X</span></span
+                  >Summa ex moms <span class="var">–</span></span
                 >
               </td>
             </tr>
             <tr>
               <td>
-                <span class="block">Moms <span class="var">X</span></span>
+                <span class="block">Moms <span class="var">–</span></span>
               </td>
             </tr>
             <tr>
               <td>
                 <span class="block"
-                  >Öresavrudning <span class="var">X</span></span
+                  >Öresavrudning <span class="var">–</span></span
                 >
               </td>
             </tr>
             <tr>
               <td>
                 <span class="block"
-                  >Summa att betala <span class="var">X</span></span
+                  >Summa att betala <span class="var">–</span></span
                 >
               </td>
             </tr>

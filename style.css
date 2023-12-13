@@ -72,7 +72,7 @@ input {
   border: none;
   outline: none;
   background: none;
-  text-align: right;
+  /* text-align: right;
 }
 
 #uName,
@@ -80,3 +80,5 @@ input {
 #uPhone {
   text-align: left;
 }
+
+
