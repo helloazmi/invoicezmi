@@ -69,16 +69,21 @@
         </div>
         <div class="container-faktura">
           <span class="block"
-            >Fakturadatum <span class="var">YYYY-MM-DD</span></span
-          >
-          <span class="block">Betalningsvillkor <span>30 dagar</span></span>
-          <span class="block">Dröjsmålsränta <span>12%</span></span>
+            >Fakturadatum
+            <input class="var" id="invoiceDate" value="YYYY-MM-DD"
+          /></span>
+          <span class="block"
+            >Betalningsvillkor <input class="var" id="dueDays" value="30"
+          /></span>
+          <span class="block"
+            >Dröjsmålsränta <input class="var" id="delayFee" value="12%"
+          /></span>
         </div>
       </div>
       <hr />
       <!-- Table-->
 
-      <table style="width: 100%">
+      <table style="width: 100%" id="jobs">
         <tr>
           <th>Beskrivning</th>
           <th>Moms</th>
