@@ -88,3 +88,5 @@ const addRow = () => {
 
   table.appendChild(newRow);
 };
+
+updateFinalPay();
