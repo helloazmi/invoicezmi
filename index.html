@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoicezmi - Create invoice fast, simple and FREEzmi!</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Add additional meta tags, stylesheets, or scripts here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.0/html2pdf.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Your content goes here -->
-
-    <!-- Add your scripts at the end of the body for better performance -->
-
-    <link rel="stylesheet" href="style.css" />
+    
+    
 
     <div class="container">
       <span class="showing" id="info"
@@ -20,9 +24,7 @@
         <p><span class="showing" style="color:green">O</span><span class="showing"> = Kalkyleras automatiskt</span></p>
         <p><span class="showing" style="color:reen">O</span><span class="showing"> = CTRL+P för att spara som PDF.</span></p>
         <p style="color:white">-</p>
-    
-        </span
-      >
+        </span>
       <div class="header">
         <div class="container-azmi">
           <input class="var" id="uName" value="AZMI KASHEM" />
@@ -105,7 +107,7 @@
 
     -->
 
-      <table style="width: 100%" id="myTable">
+      <table style="" id="myTable">
         <tr>
           <th>Beskrivning</th>
           <th>Moms</th>
@@ -170,7 +172,7 @@
                   <span class="dynamic" id="totalSumToPayExVat">–</span></span
                 >
               </td>
-            </tr>
+            </tr> 
             <tr>
               <td>
                 <span class="block"
@@ -199,7 +201,8 @@
       </div>
     </div>
     <!-- Main Container-->
-
+    
     <script src="script.js"></script>
+
   </body>
 </html>

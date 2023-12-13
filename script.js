@@ -64,8 +64,27 @@ const getFinaSumVat = () => {
   return 0.25 * getFinalSumExVat();
 };
 
-//function not doen
+//function not done but set display to none
 const setAllClassToHide = () => {};
+
+//current
+const hideTools = () => {
+  console.log("Pressed i");
+  if (settingsModeActive) {
+    settingsModeActive = false;
+    console.log("settingsModeActive to", settingsModeActive);
+
+    changeClass(".var", "_var");
+    changeClass(".dynamic", "_dynamic");
+    changeClass(".showing", "hiding");
+  } else {
+    settingsModeActive = true;
+    console.log("settingsModeActive to", settingsModeActive);
+    changeClass("._var", "var");
+    changeClass("._dynamic", "dynamic");
+    changeClass(".hiding", "showing");
+  }
+};
 
 // Calculates Final Sum To Pay
 const getFinalToPay = () => {
@@ -77,21 +96,7 @@ const handleEvent = (event) => {
   updateCurrDateAndDueDate();
 
   if (event.ctrlKey && event.key === "i") {
-    console.log("Pressed i");
-    if (settingsModeActive) {
-      settingsModeActive = false;
-      console.log("settingsModeActive to", settingsModeActive);
-
-      changeClass(".var", "_var");
-      changeClass(".dynamic", "_dynamic");
-      changeClass(".showing", "hiding");
-    } else {
-      settingsModeActive = true;
-      console.log("settingsModeActive to", settingsModeActive);
-      changeClass("._var", "var");
-      changeClass("._dynamic", "dynamic");
-      changeClass(".hiding", "showing");
-    }
+    hideTools();
   }
 };
 
