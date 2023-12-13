@@ -1,4 +1,43 @@
-// Summerizes everuting into the bottom
+//localStorage testing, must stringify(saving) and parse (retrieving)
+const userData = {};
+
+//Storing
+localStorage.setItem("userData", JSON.stringify(userData));
+
+//Retrieving
+const storedUserDataString = localStorage.getItem("userData");
+const storedUserData = JSON.parse(storedUserDataString);
+
+//Collect
+const gather = () => {
+  let uName = document.getElementById("uName").value;
+  let uEmail = document.getElementById("uEmail").value;
+  let uPhone = document.getElementById("uPhone").value;
+  let dueDays = document.getElementById("dueDays").value;
+  console.log(uName);
+  console.log(uEmail);
+  console.log(uPhone);
+  console.log(dueDays);
+};
+
+//Get current year as string
+const updateCurrDateAndDueDate = () => {
+  let invoiceDate = document.getElementById("invoiceDate");
+  let dueDaysValue = document.getElementById("dueDays");
+  // Get the current date
+  const currentDate = new Date();
+  invoiceDate.value = currentDate.toLocaleDateString("sv-SE"); //prints as string
+
+  // Add 30 days to the current date
+  currentDate.setDate(currentDate.getDate() + Number(dueDaysValue.value));
+  let todayPlus30 = currentDate;
+  //console.log(todayPlus30);
+
+  dueDate = document.getElementById("dueDate");
+  dueDate.value = todayPlus30.toLocaleDateString("sv-SE");
+};
+
+// Summerizes everything to the bottom
 const getFinalSumExVat = () => {
   let sum = 0;
   let totalPriceNodeList = document.querySelectorAll("#totalJobPriceExVat");
@@ -12,7 +51,7 @@ const getFinalSumExVat = () => {
 };
 
 const updateFinalPay = () => {
-  console.log(getFinalSumExVat());
+  //console.log(getFinalSumExVat());
   document.querySelectorAll("#totalSumToPayExVat")[0].textContent =
     getFinalSumExVat();
   document.querySelectorAll("#vatSum")[0].textContent = getFinaSumVat();
@@ -25,6 +64,9 @@ const getFinaSumVat = () => {
   return 0.25 * getFinalSumExVat();
 };
 
+//function not doen
+const setAllClassToHide = () => {};
+
 // Calculates Final Sum To Pay
 const getFinalToPay = () => {
   return 1.25 * getFinalSumExVat();
@@ -32,6 +74,7 @@ const getFinalToPay = () => {
 settingsModeActive = true;
 const handleEvent = (event) => {
   updateFinalPay();
+  updateCurrDateAndDueDate();
 
   if (event.ctrlKey && event.key === "i") {
     console.log("Pressed i");
@@ -52,13 +95,13 @@ const handleEvent = (event) => {
   }
 };
 
-document.addEventListener("keydown", handleEvent);
+document.addEventListener("keyup", handleEvent);
 document.addEventListener("click", handleEvent);
 
 const changeClass = (from, to) => {
   // Select all elements with class name "var"
   var elements = document.querySelectorAll(from);
-  console.log(elements);
+  //console.log(elements);
   // Loop through each element and change its content to "string"
   elements.forEach(function (element) {
     element.className = to;
@@ -89,4 +132,13 @@ const addRow = () => {
   table.appendChild(newRow);
 };
 
+function removeRow(button) {
+  // Get the reference to the button's parent row
+  const row = button.parentNode.parentNode;
+
+  // Remove the row from the table
+  row.parentNode.removeChild(row);
+}
+
 updateFinalPay();
+updateCurrDateAndDueDate();

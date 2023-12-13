@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="style.css" />
 
     <div class="container">
+      <span class="showing" id="info"
+        style="font-weight:bold">Tryck på CTRL+i för att växla läge</span>
+        <p><span class="showing" style="color:blue">O</span><span class="showing"> = Du kan redigera text</span></p>
+        <p><span class="showing" style="color:green">O</span><span class="showing"> = Kalkyleras automatiskt</span></p>
+        <p><span class="showing" style="color:reen">O</span><span class="showing"> = CTRL+P för att spara som PDF.</span></p>
+        <p style="color:white">-</p>
+    
+        </span
+      >
       <div class="header">
         <div class="container-azmi">
           <input class="var" id="uName" value="AZMI KASHEM" />
@@ -50,7 +59,10 @@
           /></span>
 
           <span class="block"
-            >Bankkonto<input class="var" id="uBankAccount" value="–"
+            >Bankkonto<input
+              class="var"
+              id="uBankAccount"
+              value="1849 29 33186"
           /></span>
         </div>
       </div>
@@ -93,63 +105,57 @@
 
     -->
 
-      <table style="width: 100%" id="table">
+      <table style="width: 100%" id="myTable">
         <tr>
           <th>Beskrivning</th>
           <th>Moms</th>
           <th>Antal</th>
-          <th>À-pris</th>
-          <th>Summa</th>
+          <th>À-pris (SEK)</th>
+          <th>Summa exMoms (SEK)</th>
         </tr>
         <tr>
-          <td><input class="var" id="jobName" value="Testuppdrag-1" /></td>
-          <td><input class="" id="varValue" value="25%" readonly /></td>
+          <td><input class="var" id="jobName" value="Exempel" /></td>
+          <td><input class="" id="vatValue" value="25%" readonly /></td>
           <td><input class="var" id="unit" value="1" /></td>
-          <td><input class="var" id="unitPrice" value="1000" /></td>
-          <td><input class="var" id="totalJobPriceExVat" value="1000" /></td>
-        </tr>
-        <tr>
-          <td><input class="var" id="jobName" value="Testuppdrag-2" /></td>
-          <td><input class="" id="varValue" value="25%" readonly /></td>
-          <td><input class="var" id="unit" value="1" /></td>
-          <td><input class="var" id="unitPrice" value="400" /></td>
-          <td><input class="var" id="totalJobPriceExVat" value="400" /></td>
+          <td><input class="var" id="unitPrice" value="1" /></td>
+          <td><input class="var" id="totalJobPriceExVat" value="1" /></td>
+          <td><button class="showing" onclick="removeRow(this)">X</button></td>
         </tr>
       </table>
       <button
         class="showing"
-        id="add-row-button"
+        id="addRowButton"
         onclick="(() => {
             console.log('pressed add');
             // Get the reference to the table
-        var table = document.getElementById('table');
+        const myTable = document.getElementById('myTable');
 
-        var lastRow = table.rows[table.rows.length - 1];
+        const tbody = myTable.querySelector('tbody');
+        //myTable.childNodes[1].childNodes[0] //first tr
 
-        var newRow = lastRow.cloneNode(true);
+        // Create a new row
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td><input class='var' id='jobName' value='Exempel' /></td>
+            <td><input class='' id='vatValue' value='25%' readonly /></td>
+            <td><input class='var' id='unit' value='1'/></td>
+            <td><input class='var' id='unitPrice' value='0'/></td>
+            <td><input class='var' id='totalJobPriceExVat' value='0'/></td>
+            <td><button class='showing' onclick='removeRow(this)'>X</button></td>
+        `;
 
-        var cells = newRow.getElementsByTagName('td');
-      
-        
-            cells.innerHTML = `
-            <tr>
-                <td><input class='var' id='jobName' value='Testuppdrag-1' /></td>
-                <td><input class='var' id='unit' value='1'/></td>
-                <td><input class='var' id='varValue' value='25%'/></td>
-                <td><input class='var' id='unitPrice' value='4xx00'/></td>
-                <td><input class='var' id='totalJobPriceExVat' value='400'/></td>
-           </tr>`;
-        
-
-        table.appendChild(newRow);
-            
+        // Append the new row to the tbody
+        tbody.appendChild(newRow);
 
 
-        })()"
+         } )()"
       >
         +
       </button>
       <!-- <button id="calc-sum" onclick="updateFinalPay()">=</button> -->
+      <button class="showing" id="gatherButton" onclick="gather()">
+        gather
+      </button>
 
       <!-- Table Lower-->
       <div class="header">
@@ -160,7 +166,7 @@
             <tr>
               <td>
                 <span class="block"
-                  >Summa ex moms
+                  >Summa exMoms (SEK)
                   <span class="dynamic" id="totalSumToPayExVat">–</span></span
                 >
               </td>
@@ -183,7 +189,7 @@
             <tr>
               <td>
                 <span class="block"
-                  >Summa att betala
+                  >Summa att betala (SEK)
                   <span class="dynamic" id="totalSumToPay">–</span></span
                 >
               </td>
