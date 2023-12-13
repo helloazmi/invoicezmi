@@ -31,16 +31,15 @@ hr {
   width: 50%;
 }
 
-.two {
-  text-align: ;
-}
-
 .container-faktura {
   border: 0px solid lightblue;
   width: 100%;
 }
 
-.block {
+.block,
+#uName,
+#uPhone,
+#uEmail {
   display: block;
   background-color: ;
   display: flex;
@@ -50,7 +49,8 @@ hr {
   padding-right: 25px;
 }
 
-.title {
+.title,
+#uName {
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -66,13 +66,15 @@ td {
 .var {
   color: blue;
 }
+.dynamic {
+  color: green;
+}
 
 input {
   font-size: 16px;
   border: none;
   outline: none;
   background: none;
-  /* text-align: right;
 }
 
 #uName,
@@ -81,4 +83,10 @@ input {
   text-align: left;
 }
 
+.showing {
+  display: show;
+}
 
+.hiding {
+  display: none;
+}
