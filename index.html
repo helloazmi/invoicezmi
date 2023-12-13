@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Page Title</title>
+    <!-- Add additional meta tags, stylesheets, or scripts here -->
+  </head>
+  <body>
+    <!-- Your content goes here -->
+
+    <!-- Add your scripts at the end of the body for better performance -->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <div class="container">
+      <div class="header">
+        <div class="container-azmi">
+          <input class="block title var" id="uName" value="AZMI KASHEM" />
+          <input
+            class="block var"
+            id="uEmail"
+            placeholder="phone here"
+            value="azmi.akash@gmail.com"
+          />
+          <input
+            class="block var"
+            id="uPhone"
+            placeholder="phone here"
+            value="0735 95 14 84"
+          />
+        </div>
+
+        <div class="container-faktura">
+          <span class="block title">FAKTURA</span>
+          <span class="block"
+            >Förfallodatum <input class="var" id="dueDate" value="X"
+          /></span>
+          <span class="block"
+            >Summa att betala <input class="var" id="sumToPay" value="X"
+          /></span>
+          <span class="block"
+            >Ange referens <input class="var" id="contactReference" value="X"
+          /></span>
+
+          <span class="block"
+            >Bankkonto<input class="var" id="uBankAccount" value="X"
+          /></span>
+        </div>
+      </div>
+      <br /><br /><br /><br />
+
+      <hr />
+
+      <!-- MID-->
+      <div class="header">
+        <div class="container-azmi">
+          <span class="block"
+            >Fakturanummer <span class="var" id="fakturanummer">X</span></span
+          >
+          <span class="block">Kundnummer <span class="var">X</span></span>
+          <span class="block">Kundreferens <span class="var">X</span></span>
+        </div>
+        <div class="container-faktura">
+          <span class="block"
+            >Fakturadatum <span class="var">YYYY-MM-DD</span></span
+          >
+          <span class="block">Betalningsvillkor <span>30 dagar</span></span>
+          <span class="block">Dröjsmålsränta <span>12%</span></span>
+        </div>
+      </div>
+      <hr />
+      <!-- Table-->
+
+      <table style="width: 100%">
+        <tr>
+          <th>Beskrivning</th>
+          <th>Moms</th>
+          <th>Antal</th>
+          <th>À-pris</th>
+          <th>Summa</th>
+        </tr>
+        <tr>
+          <td>Uppdrag</td>
+          <td>25%</td>
+          <td>1</td>
+          <td>K KKK</td>
+          <td>K KKK</td>
+        </tr>
+      </table>
+
+      <!-- Table Lower-->
+      <div class="header">
+        <div class="container-blank"></div>
+        <div class="container-faktura">
+          <hr style="margin-top: 25px; margin-bottom: 5px" />
+          <table style="width: 100%">
+            <tr>
+              <td>
+                <span class="block"
+                  >Summa ex moms <span class="var">X</span></span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="block">Moms <span class="var">X</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="block"
+                  >Öresavrudning <span class="var">X</span></span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="block"
+                  >Summa att betala <span class="var">X</span></span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Main Container-->
+
+    <script src="script.js"></script>
+  </body>
+</html>

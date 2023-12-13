@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "gitmoji": "github:carloscuesta/gitmoji",
+    "global": "^4.4.0"
+  }
+}
