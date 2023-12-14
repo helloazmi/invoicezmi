@@ -3,12 +3,11 @@
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 600px) {
   .container {
-      padding: 10px; /* Adjust padding for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 
   /* Adjust other styles as needed for a mobile-friendly layout */
 }
-
 
 body,
 input {
@@ -25,7 +24,7 @@ hr {
   padding: 35px; /*border: 1px solid grey;*/
   padding-left: 50px;
   padding-right: 50px;
-  width:40%
+  width: ;
   height: 600px;
 }
 
@@ -45,8 +44,15 @@ hr {
 }
 
 .container-faktura {
-  border: 0px solid lightblue;
+  display: inline-block; /* pontetial remove*/
+  justify-content: space-between;
+  border: px solid lightblue;
   width: 100%;
+  padding: 10px;
+}
+
+.container-customer {
+  background-color: ;
 }
 
 .block,
@@ -82,7 +88,11 @@ td {
 .dynamic {
   color: green;
 }
-
+#dueDate,
+#invoiceNum,
+#invoiceDate {
+  margin-left: 0;
+}
 input {
   font-size: 16px;
   border: none;
@@ -120,6 +130,48 @@ button.showing {
   color: white;
 }
 
+#dueDate {
+  margin-left: ;
+}
+
 #info {
   font-size: 1.4rem;
+}
+
+#fakturaTable {
+  border-collapse: separate;
+  border-spacing: 20px; /* Adjust the spacing as needed */
+  display: inline-block;
+  width: 300px;
+}
+
+span.block {
+  border: 1px pink;
+  background-color: ;
+  width: 380px;
+}
+
+/* Style for table cells (optional) */
+#fakturaTable th {
+  width: 132px;
+  padding: 10px; /* Add padding to the cells for better spacing */
+  border: 1px solid green; /* Add borders for better visibility */
+}
+
+#fakturaTable td {
+  width: 50px;
+  border: 1px solid pink;
+}
+input#nums {
+  width: 50px;
+  border: 1px solid pink;
+}
+
+#myTable {
+  width: 100%;
+}
+
+#myTable input {
+  width: 90px;
+  border: 1px solid blue;
 }
