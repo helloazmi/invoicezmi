@@ -1,14 +1,18 @@
 /* Existing styles */
 
 /* Media query for smaller screens (e.g., mobile devices) */
+/* 
 @media only screen and (max-width: 600px) {
   .container {
     padding: 10px; /* Adjust padding for smaller screens */
-  }
+  /* }*/
 
   /* Adjust other styles as needed for a mobile-friendly layout */
-}
+  /* }*/
 
+body, html {
+ margin-right:8%;
+}
 body,
 input {
   font-family: "Futura", sans-serif;
@@ -18,13 +22,15 @@ hr {
   border-width: 1px;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
+  
 }
 
 .container {
   padding: 35px; /*border: 1px solid grey;*/
   padding-left: 50px;
   padding-right: 50px;
-  width: ;
+  width: 100%;
   height: 600px;
 }
 
@@ -47,7 +53,7 @@ hr {
   display: inline-block; /* pontetial remove*/
   justify-content: space-between;
   border: px solid lightblue;
-  width: 100%;
+  width: 85%;
   padding: 10px;
 }
 
