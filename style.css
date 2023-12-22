@@ -181,3 +181,7 @@ input#nums {
   width: 90px;
   border: 0px solid blue;
 }
+
+input {
+  width: 25%;
+}

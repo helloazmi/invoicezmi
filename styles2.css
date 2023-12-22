@@ -1,0 +1,129 @@
+body, html {
+  padding: 10px;
+  font-family: 'Futura', sans-serif;
+ 
+}
+
+.header-container { display: flex; }
+
+input {
+    border: none;
+    font-size: 1rem;
+}
+
+#title { font-size: 1.3rem; font-weight:bold;}
+.left input {
+    font-size: 1rem;
+    font-weight: ;
+}
+
+hr {
+    border-color: black;
+}
+
+#summa-table th, #summa-table td {
+    text-align: right;
+}
+.summa-left-lean {
+    text-align:
+
+}
+
+#faktura-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+
+.left, .right {  width:100%;  }
+.left { /* background-color: lightblue; */}
+
+.right { /* background-color: lightcoral;  */ display: flex; justify-content: flex-end;    }
+
+.block {display: flex;}
+
+.a-sec {background-color: tomato; padding: 15px; display: inline-block; }
+.b-sec {background-color: lavender; padding: 15px; display: inline-block; }
+
+#faktura-table th { text-align: right;}
+
+#faktura-table td  {
+   display: flex;
+    justify-content: space-between;
+    
+}
+.faktura-title { font-weight: bold;}
+
+.faktura-data { margin-left: 16px;}
+
+
+
+/*--------------------*/
+
+
+#jobs input.date {
+width: 80px;
+  background-color: ;
+}
+
+
+#jobs input.tax {
+  width: 50px;
+    background-color: ;
+  }
+
+#jobs input.quantity {
+  width: 60px;
+    background-color: ;
+  }
+
+
+#jobs {
+
+    border-collapse: collapse;
+    padding: 15px;
+    
+  }
+  #jobs input {
+    font-size: 0.8rem;
+    width: 200px;
+   
+  }
+  #jobs th,
+  #jobs td  {
+    border: 0px solid #ddd;
+    padding-top: 1.2rem;
+    font-size: 0.8rem;
+    text-align: left;
+   
+
+  }
+
+  #summa-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #summa-table th,
+  #summa-table td {
+    border: 0px solid #ddd;
+    padding: 15px;
+  }
+
+  /*
+  -------------------------
+  */
+
+  .var {
+    color: blue;
+  }
+
+  .dynamic {
+    color: green;
+  }
+
+
+  #jobs th:nth-child(2) {
+    width: 1000px; /* Adjust the width as needed */
+  }
