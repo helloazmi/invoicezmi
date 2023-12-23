@@ -20,20 +20,20 @@
     <div class="left">
       <table class="">
         <tbody>
-          <tr>
-            <td><input type="text" id="title" class="var" value="AZMI KASSSSHEM"></td>
+          <tr><!-- fixa id-->
+            <td><input type="text" id="uName" class="var" value="Förnamn Efternamn" placeholder="Förnamn Efternamn"></td>
           </tr>
           <tr>
-            <td><input type="text" class="var" value="0735951484"></td>
+            <td><input type="text" class="var" id="uPhone" value="073XXXXXXX" placeholder="Telefon"></td>
           </tr>
           <tr>
-            <td><input type="text" class="var" value="azmi.akash@gmail.com"></td>
+            <td><input type="text" class="var" id="uEmail" value="azmi.akash@gmail.com" placeholder="E-post"></td>
           </tr>
           <tr>
-            <td><input type="text" class="var" value=""></td>
+            <td><input type="text" class="var" value="" readonly style="outline: none; cursor: default;"></td>
           </tr>
           <tr>
-            <td><input type="text" class="var" value=""></td>
+            <td><input type="text" class="var" value="" readonly style="outline: none; cursor: default;"></td>
           </tr>
           <tr>
             <td style="font-weight: bold">Meddelande</td>
@@ -56,7 +56,7 @@
                   <td><span class="faktura-title">Förfallodatum</span> <input type="text" class="faktura-data dynamic" id="dueDate" value="2023----"></td>
                 </tr>
                 <tr>
-                  <td><span class="faktura-title">Fakturanummer</span> <input type="text" class="faktura-data" id="invoiceNum" value="101"></td>
+                  <td><span class="faktura-title">Fakturanummer</span> <input type="text" class="faktura-data var" id="invoiceNum" value="101"></td>
                 </tr>
                 <tr>
                   <td><span class="faktura-title">Summa att betala</span> <input type="text" class="faktura-data dynamic" id="sumToPay" value="1250 kr"></td>
@@ -177,7 +177,9 @@
 
 <button class="test" onclick="addRow()">ADD</button>
 <button class="test" onclick="switchMode()">SWITCH</button>
-<button class="test" onclick="updateFinalPay()">TEST</button>
+<button class="test" onclick="gather()">GATHER</button>
+<button class="test" onclick="ls_save()">SAVE</button>
+<button class="test" onclick="ls_load()">LOAD</button>
 
 
 

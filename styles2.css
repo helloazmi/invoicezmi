@@ -11,7 +11,7 @@ input {
     font-size: 1rem;
 }
 
-#title { font-size: 1.3rem; font-weight:bold;}
+#uName { font-size: 1.3rem; font-weight:bold;}
 .left input {
     font-size: 1rem;
     font-weight: ;
@@ -118,10 +118,13 @@ width: 80px;
 
   .var {
     color: blue;
+    
   }
 
   .dynamic {
     color: green;
+    cursor: default;
+    outline: none; cursor: default;
   }
 
 

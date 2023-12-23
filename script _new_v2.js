@@ -3,17 +3,59 @@ console.log('Script2 loaded')
 
 let finalSumVat;
 //localStorage testing, must stringify(saving) and parse (retrieving)
-const userData = {};
 
-//Storing
-localStorage.setItem("userData", JSON.stringify(userData));
 
-//Retrieving
-const storedUserDataString = localStorage.getItem("userData");
-const storedUserData = JSON.parse(storedUserDataString);
 
-//Collect
-const gather = () => {
+
+ls_load();
+updateJobs();
+updateSummary();
+updateCurrDate();
+updateDueDate();
+
+
+function ls_load() {
+  console.log('LOAD');
+  //Retrieving
+  const storedUserDataString = localStorage.getItem("userData");
+  const storedUserData = JSON.parse(storedUserDataString);
+
+  let uName = document.getElementById("uName")
+  let uEmail = document.getElementById("uEmail")
+  let uPhone = document.getElementById("uPhone")
+
+  
+
+  
+  uName.value = storedUserData.uName;
+  uEmail.value = storedUserData.uEmail;
+  uPhone.value = storedUserData.uPhone;
+
+  console.log('after', uName.value)
+
+ 
+ 
+
+  /*
+  
+   if(uName.value == undefined) uName.value = 'Förnamn Efternamn';
+  if(uEmail.value == undefined) uEmail.value = 'E-post';
+  if(uPhone.value == undefined) uPhone.value = '073XXXXX;XX';
+
+  */
+}
+
+function ls_save() {
+  console.log('SAVE');
+
+  //Storing
+localStorage.setItem("userData", JSON.stringify(gather()));
+}
+
+
+
+function gather() {
+  console.log('..GATHERING')
   let uName = document.getElementById("uName").value;
   let uEmail = document.getElementById("uEmail").value;
   let uPhone = document.getElementById("uPhone").value;
@@ -22,12 +64,14 @@ const gather = () => {
   console.log(uEmail);
   console.log(uPhone);
   console.log(dueDays);
+
+  return {
+    uName: uName,
+    uEmail: uEmail,
+    uPhone: uPhone,
+  }
 };
 
-updateJobs();
-updateSummary();
-updateCurrDate();
-updateDueDate();
 
 
 // Handler
@@ -38,6 +82,8 @@ function handleEvent (event) {
    updateJobs();
    updateSummary();
    updateDueDate();
+
+   ls_save();
 
 
   if (event.ctrlKey && event.key === "i") {
@@ -102,23 +148,26 @@ function updateDueDate() {
   // Get the current date and prints to fakturadatum
   const currentDate = new Date();
 
- 
 
 
- 
 
-   
+
+ //fixa
+   //CURENT DAATE + 30
   // Add 30 days to the current date
   currentDate.setDate(currentDate.getDate() + Number(dueDaysValue.value));
   let todayPlus30 = currentDate;
   //console.log(todayPlus30);
+ /*
+
  
+ */
 
 
   dueDate = document.getElementById("dueDate");
   dueDate.value = todayPlus30.toLocaleDateString("sv-SE");
 
- console.log('....updateDueDate()')
+ 
 };
 
 
