@@ -59,7 +59,7 @@
                   <td><span class="faktura-title">Fakturanummer</span> <input type="text" class="faktura-data" id="invoiceNum" value="101"></td>
                 </tr>
                 <tr>
-                  <td><span class="faktura-title">Summa att betala</span> <input type="text" class="faktura-data" id="sumToPay" value="1250 kr"></td>
+                  <td><span class="faktura-title">Summa att betala</span> <input type="text" class="faktura-data dynamic" id="sumToPay" value="1250 kr"></td>
                 </tr>
                 <tr>
                   <td><span class="faktura-title">Ange referens </span><input type="text" class="faktura-data var" value="A-101"></td>
@@ -107,7 +107,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><button  class="hideable" onclick="removeRow(this)"     >x</button></td>
+                  <td><button  class="hideable delete" onclick="removeRow(this)"     >x</button></td>
                   <td><input type="text" class="description var" value="Testuppdrag-A"></td>
                   <td><input type="text" class="date var" value="2023-06-XX"></td>
                   <td><input type="text" class="tax var" value="25"></td>
@@ -117,7 +117,7 @@
                   
                 </tr>
                 <tr>
-                  <td><button   class="hideable" onclick="removeRow(this)"     >x</button></td>
+                  <td><button   class="hideable delete" onclick="removeRow(this)"     >x</button></td>
                   <td><input type="text" class="description var" value="Testuppdrag-B"></td>
                   <td><input type="text" class="date var" value="2023-06-XX"></td>
                   <td><input type="text" class="tax var" value="25"></td>
@@ -175,10 +175,9 @@
 
 
 
-<button onclick="addRow()">ADD</button>
-<button onclick="switchMode()">SWITCH</button>
-<button onclick="updateDueDate()">date</button>
-<button onclick="updateFinalPay()">TEST</button>
+<button class="test" onclick="addRow()">ADD</button>
+<button class="test" onclick="switchMode()">SWITCH</button>
+<button class="test" onclick="updateFinalPay()">TEST</button>
 
 
 

@@ -111,7 +111,7 @@ function updateDueDate() {
   // Add 30 days to the current date
   currentDate.setDate(currentDate.getDate() + Number(dueDaysValue.value));
   let todayPlus30 = currentDate;
-  console.log(todayPlus30);
+  //console.log(todayPlus30);
  
 
 
