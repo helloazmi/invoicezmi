@@ -53,7 +53,10 @@
                   <td id="faktura-title">FAKTURA </td>  
                 </tr>
                 <tr>
-                  <td><span class="faktura-title">Förfallodatum</span> <input type="text" class="faktura-data" id="dueDate" value="2023-12-31"></td>
+                  <td><span class="faktura-title">Förfallodatum</span> <input type="text" class="faktura-data dynamic" id="dueDate" value="2023----"></td>
+                </tr>
+                <tr>
+                  <td><span class="faktura-title">Fakturanummer</span> <input type="text" class="faktura-data" id="invoiceNum" value="101"></td>
                 </tr>
                 <tr>
                   <td><span class="faktura-title">Summa att betala</span> <input type="text" class="faktura-data" id="sumToPay" value="1250 kr"></td>
@@ -63,6 +66,12 @@
                 </tr>
                 <tr>
                   <td><span class="faktura-title">Bankkonto </span><input type="text" class="faktura-data var" value="3310 910418XXXX"></td>
+                </tr>
+                <tr>
+                  <td><span class="faktura-title">Fakturadatum</span> <input type="text" class="faktura-data var" id="invoiceDate"value="2023-----"></td>
+                </tr>
+                <tr>
+                  <td><span class="faktura-title">Betalningsvillkor dagar</span> <input type="text" class="faktura-data var" id="dueDays"value="30"></td>
                 </tr>
                
                 <tr>
@@ -85,35 +94,37 @@
           <div class="center jobs">
             <table id="jobs">
               <thead>
-                
+                <tr>
+                  <th class="hidable" style="width: 5px;"></th>
                   <th>Uppdrag</th>
                   <th>Datum</th>
                   <th>Moms</th>
                   <th  style="width: 1000px;">Antal</th>
                   <th>À-pris (SEK)</th>
                   <th>Summa exMoms (SEK)</th>
-                  <th class="hidable" style="width: 5px;"></th>
-               
+                  
+                </tr>
               </thead>
               <tbody>
                 <tr>
-                  
+                  <td><button  class="hideable" onclick="removeRow(this)"     >x</button></td>
                   <td><input type="text" class="description var" value="Testuppdrag-A"></td>
                   <td><input type="text" class="date var" value="2023-06-XX"></td>
                   <td><input type="text" class="tax var" value="25"></td>
                   <td><input type="text" class="quantity var" value="1"></td>
                   <td><input type="text" class="unitPrice var" value="1000"></td>
-                  <td><input type="text" class="sumExVat" id="totalJobPriceExVat" readonly value="-" ></td>
-                  <td><button  class="hideable" onclick="removeRow(this)"     >x</button></td>
+                  <td><input type="text" class="sumExVat" id="totalJobPriceExVat" readonly value="0" ></td>
+                  
                 </tr>
                 <tr>
+                  <td><button   class="hideable" onclick="removeRow(this)"     >x</button></td>
                   <td><input type="text" class="description var" value="Testuppdrag-B"></td>
                   <td><input type="text" class="date var" value="2023-06-XX"></td>
                   <td><input type="text" class="tax var" value="25"></td>
                   <td><input type="text" class="quantity var" value="1"></td>
                   <td><input type="text" class="unitPrice var" value="600"></td>
-                  <td><input type="text" class="sumExVat" id="totalJobPriceExVat" readonly  value="-"></td>
-                  <td><button   class="hideable" onclick="removeRow(this)"     >x</button></td>
+                  <td><input type="text" class="sumExVat" id="totalJobPriceExVat" readonly  value="0"></td>
+                  
 
                 </tr>
               </tbody>
@@ -166,7 +177,7 @@
 
 <button onclick="addRow()">ADD</button>
 <button onclick="switchMode()">SWITCH</button>
-<button onclick="updateJobs()">UPDATEW</button>
+<button onclick="updateDueDate()">date</button>
 <button onclick="updateFinalPay()">TEST</button>
 
 

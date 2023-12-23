@@ -25,8 +25,9 @@ const gather = () => {
 };
 
 updateJobs();
-//calcFinalSumExVat();
 updateSummary();
+updateCurrDate();
+updateDueDate();
 
 
 // Handler
@@ -36,10 +37,8 @@ document.addEventListener("click", handleEvent);
 function handleEvent (event) {
    updateJobs();
    updateSummary();
-  //calcFinalSumExVat();
-  //updateSummary();
-  //updateCurrDateAndDueDate();
-  //console.log(event)
+   updateDueDate();
+
 
   if (event.ctrlKey && event.key === "i") {
     console.log('hideTools();')
@@ -85,6 +84,46 @@ function removeRow(button) {
   row.parentNode.removeChild(row);
   }
 }
+
+function updateCurrDate() {
+  
+  let invoiceDate = document.getElementById("invoiceDate");
+  const currentDate = new Date();
+  invoiceDate.value = currentDate.toLocaleDateString("sv-SE"); //prints as string
+
+}
+
+
+//Get current year as string
+function updateDueDate() {
+  let invoiceDate = document.getElementById("invoiceDate");
+  let dueDaysValue = document.getElementById("dueDays");
+ 
+  // Get the current date and prints to fakturadatum
+  const currentDate = new Date();
+
+ 
+
+
+ 
+
+   
+  // Add 30 days to the current date
+  currentDate.setDate(currentDate.getDate() + Number(dueDaysValue.value));
+  let todayPlus30 = currentDate;
+  console.log(todayPlus30);
+ 
+
+
+  dueDate = document.getElementById("dueDate");
+  dueDate.value = todayPlus30.toLocaleDateString("sv-SE");
+
+ console.log('....updateDueDate()')
+};
+
+
+
+
 
 
 
@@ -215,6 +254,11 @@ function updateSummary(){
 
    let finalPay = document.getElementById('finalPay');
    finalPay.textContent = finalSumVat + calcFinalSumExVat();
+
+   let sumToPay = document.getElementById('sumToPay');
+   sumToPay.value = finalSumVat + calcFinalSumExVat();
+
+   
 
   
 }
