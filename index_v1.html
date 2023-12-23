@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoicezmi - Create invoice fast, simple and FREEzmi!</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Add additional meta tags, stylesheets, or scripts here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.0/html2pdf.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    
+    
+    <div class="container">
+      
+      <span class="showing" id="info"
+        style="font-weight:bold">Tryck på CTRL+i för att växla läge</span>
+        <p><span class="showing" style="color:blue">O</span><span class="showing"> = Du kan redigera text</span></p>
+        <p><span class="showing" style="color:green">O</span><span class="showing"> = Kalkyleras automatiskt</span></p>
+        <p><span class="showing" style="color:reen">O</span><span class="showing"> = CTRL+P för att spara som PDF.</span></p>
+        <p style="color:white">-</p>
+      </span>
+    
+      <div class="header">   
+        <div class="container-azmi">
+          <input class="var" id="uName" value="AZMI KASHEM" />
+          <input
+            class="var"
+            id="uEmail"
+            placeholder="phone here"
+            value="azmi.akash@gmail.com"
+          />
+          <input
+            class="var"
+            id="uPhone"
+            placeholder="phone here"
+            value="0735 95 14 84"
+          />
+        </div>
+        <div>
+        <div class="container-faktura" style="background-color: rgb(255, 218, 224)">
+          <span class="block title" id="faktura-title-hidden-button" onclick="hideTools()">FAKTURA</span>
+          <span class="block"
+            >Förfallodatum <input class="dynamic" id="dueDate" value="–"
+          /></span>
+
+          <span class="block"
+            >Summa att betala<input
+              class="dynamic"
+              id="sumToPay"
+              readonly
+              value="–"
+          /></span>
+
+          <span class="block"
+            >Ange referens <input class="var" id="contactReference" value="–"
+          /></span>
+
+          <span class="block"
+            >Bankkonto<input
+              class="var"
+              id="uBankAccount"
+              value="1849 29 33186"
+          /></span>
+        </div>
+
+            <br><br>
+              <div class="container-customer">
+                    <input class="var" id="customerName" value="Företagsnamn"><br>
+                    <input class="var" id="customerStreet" value="Gatunamn 42"><br>
+                    <input class="var" id="customerPostal" value="123 34">
+                    <input class="var" id="customerPostal" value="Stockholm" style="margin: -130px"><br>
+              </div>
+        </div>
+      </div>
+<br><br><br>
+      <!-- ----  -->
+  
+
+      <hr/>
+
+      <!-- --- -->
+      
+
+
+      <!-- Customer-->
+      
+
+
+
+
+
+      
+      <!-- MID-->
+      <div class="header">
+        <div class="container-azmi">
+          <span class="block">
+            Fakturanummer <input class="var" id="invoiceNum" value="–" />
+          </span>
+          <span class="block">
+            Kundnummer <input class="var" id="customerNum" value="–" />
+          </span>
+          <span class="block">
+            Kundreferens <input class="var" id="customerReference" value="–" />
+          </span>
+        </div>
+        <div class="container-faktura">
+          <span class="block">
+            Fakturadatum
+            <input class="var" id="invoiceDate" value="YYYY-MM-DD" />
+          </span>
+          <span class="block">
+            Betalningsvillkor dagar<input class="var" id="dueDays" value="30" />
+          </span>
+          <span class="block">
+            Dröjsmålsränta <input class="var" id="delayFee" value="12%" />
+          </span>
+        </div>
+      </div>
+      <hr />
+      <!-- Table-->
+      <!--
+        let x = document.getElementsByClassName 
+        let table = document.getElementById("table")
+        x.rows[0] // ger första raden
+
+    -->
+
+      <table style="" id="myTable">
+        <tr>
+          <th>Beskrivning</th>
+          <th>Moms</th>
+          <th>Antal</th>
+          <th>À-pris (SEK)</th>
+          <th>Summa exMoms (SEK)</th>
+        </tr>
+        <tr>
+          <td><input class="var" id="jobName" value="Exempel" /></td>
+          <td><input class="" id="vatValue" value="25%" readonly /></td>
+          <td><input class="var" id="unit" value="1" /></td>
+          <td><input class="var" id="unitPrice" value="1" /></td>
+          <td><input class="var" id="totalJobPriceExVat" value="1" /></td>
+          <td><button class="showing" onclick="removeRow(this)">X</button></td>
+        </tr>
+      </table>
+      <button
+        class="showing"
+        id="addRowButton"
+        onclick="(() => {
+            console.log('pressed add');
+            // Get the reference to the table
+        const myTable = document.getElementById('myTable');
+
+        const tbody = myTable.querySelector('tbody');
+        //myTable.childNodes[1].childNodes[0] //first tr
+
+        // Create a new row
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td><input class='var' id='jobName' value='Exempel' /></td>
+            <td><input class='' id='vatValue' value='25%' readonly /></td>
+            <td><input class='var' id='unit' value='1'/></td>
+            <td><input class='var' id='unitPrice' value='0'/></td>
+            <td><input class='var' id='totalJobPriceExVat' value='0'/></td>
+            <td><button class='showing' onclick='removeRow(this)'>X</button></td>
+        `;
+
+        // Append the new row to the tbody
+        tbody.appendChild(newRow);
+
+
+         } )()"
+      >
+        +
+      </button>
+      <!-- <button id="calc-sum" onclick="updateFinalPay()">=</button> -->
+      <button class="showing" id="gatherButton" onclick="gather()">
+        gather
+      </button>
+
+      <!-- Table Lower-->
+      <div class="header">
+        <div class="container-blank"></div>
+        <div class="container-faktura">
+          <hr style="margin-top: 25px; margin-bottom: 5px" />
+          <table style="width: 100%">
+            <tr>
+              <td>
+                <span class="block"
+                  >Summa exMoms (SEK)
+                  <span class="dynamic" id="totalSumToPayExVat">–</span></span
+                >
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <span class="block"
+                  >Moms 25%<span class="dynamic" id="vatSum">–</span></span
+                >
+              </td>
+            </tr>
+            <!-- <tr>
+              <td>
+                <span class="block"
+                  >Öresavrudning <span class="var">–</span></span
+                >
+              </td>
+            </tr>
+        -->
+            <tr>
+              <td>
+                <span class="block"
+                  >Summa att betala (SEK)
+                  <span class="dynamic" id="totalSumToPay">–</span></span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Main Container-->
+    
+    <script src="script.js"></script>
+
+  </body>
+</html>
